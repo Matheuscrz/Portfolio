@@ -9,9 +9,13 @@ export default function Home() {
           <ModeToggle />
         </div>
       </header>
-      <section id="banner" className="space-y-6 py-8 md:py-12 lg:py-32">
+      <section id="intro" className="space-y-6 py-8 md:py-12 lg:py-32">
         <div className="container flex max-w-[64rem] flex-col items-center text-center gap-4">
-          <h1 className="text-primary">Banner</h1>
+          <h1 className="font-heading text-4x1 md:text-6x1 lg:text-7x1">
+            Olá, eu sou o
+            <br />
+            <span className="text-primary">Matheus</span>
+          </h1>
         </div>
       </section>
       <section id="about">
