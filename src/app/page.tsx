@@ -7,7 +7,6 @@ import StackSection from "./_components/stack-section";
 export default function Home() {
   return (
     <main className="">
-      <HeaderSection />
       <IntroSection />
       <AboutSection />
       <StackSection />

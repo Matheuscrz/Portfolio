@@ -14,7 +14,7 @@ function IntroSection() {
           cy="512"
           r="512"
           fill="url(#759c1415-0410-454c-8f7c-9a820de03641)"
-          fill-opacity="0.7"
+          fillOpacity="0.7"
         />
         <defs>
           <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">

@@ -1,4 +1,5 @@
 import { ModeToggle } from "./mode-toggle";
+import { MenuSection } from "./menu-section";
 
 function HeaderSection() {
   return (
