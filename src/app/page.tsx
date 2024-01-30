@@ -3,6 +3,7 @@ import HeaderSection from "./_components/header-section";
 import IntroSection from "./_components/intro-section";
 import AboutSection from "./_components/about-section";
 import StackSection from "./_components/stack-section";
+import ProjectsSection from "./_components/projects-section";
 
 export default function Home() {
   return (
@@ -10,9 +11,7 @@ export default function Home() {
       <IntroSection />
       <AboutSection />
       <StackSection />
-      <section id="projects">
-        <h1 className="text-primary">Projetos</h1>
-      </section>
+      <ProjectsSection />
       <section id="contacts">
         <h1 className="text-primary">Contatos</h1>
       </section>

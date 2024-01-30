@@ -34,13 +34,13 @@ function IntroSection() {
         </p>
         <div className="space-x-4">
           <a
-            href=""
+            href="https://drive.usercontent.google.com/u/0/uc?id=1rnvK6mPIhMYDPNojCJMw13OCfwbB1IXs&export=download"
             className="bg-primary py-2 px-4 text-md text-white rounded shadow-lg font-bold"
           >
             Download CV
           </a>
           <a
-            href=""
+            href="mailto:matheuslimasof.eng@gmail.com"
             className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
           >
             Entrar em Contato
