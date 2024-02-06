@@ -6,9 +6,9 @@ Bem-vindo ao meu portfolio! Este é um espaço onde compartilho alguns dos proje
 
 ### 1. **[Projeto 1: Nome do Projeto](https://github.com/Matheuscrz/Portfolio)**
 
-Descrição curta do projeto.
-![Projeto 1](caminho/da/imagem/projeto1.jpg)
-![Projeto 1 - Rodando](caminho/da/imagem/projeto1_running.jpg)
+Este portfolio foi desenvolvido utilizando Next.js, TypeScript e Tailwind CSS para criar uma experiência web moderna e responsiva.É um espaço onde compartilho alguns dos projetos em que tenho trabalhado, demonstrando minhas habilidades como desenvolvedor.
+![Projeto 1](https://imgur.com/8cV2n5Q)
+![Projeto 1 - Rodando](https://imgur.com/8cV2n5Q)
 
 ### 2. **[Projeto 2: Nome do Projeto](link/do/projeto2)**
 

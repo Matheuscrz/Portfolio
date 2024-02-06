@@ -20,7 +20,9 @@ export function MenuSection() {
           </NavigationMenuTrigger>
           <NavigationMenuContent className="absolute top-0 left-0 w-full sm:w-auto">
             <ul className="m-0 grid list-none gap-x-[10px] p-[22px] sm:w-[600px] sm:grid-flow-col sm:grid-rows-3">
-              Introdução
+              <li className="text-primary">Introdução</li>
+              <li className="text-primary">Projetos</li>
+              <li className="text-primary">Contatos</li>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
