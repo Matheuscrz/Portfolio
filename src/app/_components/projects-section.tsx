@@ -1,13 +1,15 @@
 "use client";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Slider from "react-slick";
+import Image from "next/image";
 
 interface GitHubProject {
   id: number;
   name: string;
   description: string;
   html_url: string;
-  readmeContent?: string;
+  readmeImages: string[];
 }
 
 async function getGitHubProjects(username: string): Promise<GitHubProject[]> {
@@ -16,12 +18,22 @@ async function getGitHubProjects(username: string): Promise<GitHubProject[]> {
   );
   const projects = await Promise.all(
     response.data.map(async (project: GitHubProject) => {
-      const readmeResponse = await axios.get(`${project.html_url}/readme`);
+      const readmeResponse = await axios.get(
+        `https://api.github.com/repos/${username}/${project.name}/readme`
+      );
       const readmeContent = Buffer.from(
         readmeResponse.data.content,
         "base64"
       ).toString("utf-8");
-      return { ...project, readmeContent };
+      const readmeImages = readmeContent.match(/!\[.*?\]\((.*?)\)/g) || [];
+      const imageUrls = readmeImages.map((image) => {
+        const match = image.match(/!\[.*?\]\((.*?)\)/);
+        return match ? match[1] : "";
+      });
+      return {
+        ...project,
+        readmeImages: imageUrls,
+      };
     })
   );
   return projects;
@@ -43,6 +55,30 @@ function useGitHubProjects({ username }: GitHubProjectsProps) {
   return projects;
 }
 
+function ProjectCarousel({ images }: { images: string[] }) {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+  return (
+    <Slider {...settings}>
+      {images.map((image, index) => (
+        <div key={index}>
+          <Image
+            src={image}
+            alt={`Readme image ${index}`}
+            width={500}
+            height={300}
+          />
+        </div>
+      ))}
+    </Slider>
+  );
+}
+
 function ProjectsSection() {
   const projects = useGitHubProjects({ username: "Matheuscrz" });
 
@@ -53,7 +89,7 @@ function ProjectsSection() {
     >
       <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
         <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
-          Projetos
+          Projetos em Destaque
         </h2>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
